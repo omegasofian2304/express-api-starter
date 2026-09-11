@@ -1,7 +1,7 @@
-// routes/products.js
+// routes/pizzas.js
 const express = require('express');
 const { body, param } = require('express-validator');
-const productController = require('../controllers/productController');
+const productController = require('../controllers/pizzasController');
 
 const router = express.Router();
 
@@ -106,9 +106,9 @@ const router = express.Router();
  */
 const createAndUpdateValidations = [
     body('name').isString().notEmpty().withMessage('name is required'),
-    body('description').optional().isString(),
-    body('imageUrl').optional().isString().isURL().withMessage('imageUrl must be a valid URL'),
     body('price').isFloat({ gt: 0 }).withMessage('price must be a positive number'),
+    body('imageUrl').optional().isString().isURL().withMessage('imageUrl must be a valid URL'),
+    body('dailyLimit').optional().isInt({ gt: 0 }).withMessage('dailyLimit must be a positive integer'),
 ];
 
 router.get('/', productController.findAll);
