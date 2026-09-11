@@ -1,6 +1,6 @@
-# Products API
+# Pizzas API
 
-A simple RESTful API to manage products (CRUD) built with **Express**, **SQLite3**, **express-validator**, and documented with **Swagger UI**.
+A simple RESTful API to manage pizzas and ingredients (CRUD) built with **Express**, **SQLite3**, **express-validator**, and documented with **Swagger UI**.
 
 ---
 
@@ -35,12 +35,15 @@ A simple RESTful API to manage products (CRUD) built with **Express**, **SQLite3
     │       swagger.js
     │
     ├───controllers
+    │       ingredientsController.js
     │       pizzasController.js
     │
     ├───entities
+    │       Ingredients.js
     │       Pizzas.js
     │
     └───routes
+            ingredients.js
             pizzas.js
             router.js
 ```
@@ -69,7 +72,7 @@ npm start
 
 ## Usage
 
-API base URL: http://localhost:3000/api
+API base URL: http://localhost:3000/api/v1
 
 Swagger UI docs: http://localhost:3000/docs
 
@@ -82,4 +85,3 @@ PORT=3000
 DB_FILE=./dev.sqlite
 NODE_ENV=development
 ```
-
